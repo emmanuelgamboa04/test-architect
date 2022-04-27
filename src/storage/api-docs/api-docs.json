@@ -1,0 +1,195 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API BLOG",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8888"
+        }
+    ],
+    "paths": {
+        "/api/v1/auth/login": {
+            "post": {
+                "summary": "Generar Token",
+                "operationId": "a7997e7c1e3bfed64d4e56de82415931",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Correo electronico del usuario",
+                        "required": true
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Contraseña del usuario",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Genera el token del usuario."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/v1/post": {
+            "post": {
+                "summary": "Guardar Post",
+                "operationId": "759a98c5c322cf36f20cb645b883cc9f",
+                "parameters": [
+                    {
+                        "name": "titulo",
+                        "in": "query",
+                        "description": "titulo del post",
+                        "required": true
+                    },
+                    {
+                        "name": "texto",
+                        "in": "query",
+                        "description": "texto del post",
+                        "required": true
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "description": "lista de tags del post",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Guarda el post."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/v1/posts": {
+            "get": {
+                "summary": "Lista de Posts",
+                "operationId": "1cba8475a78a335f72c389640bed6737",
+                "responses": {
+                    "200": {
+                        "description": "Genera la lista de posts."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/usuario": {
+            "post": {
+                "summary": "Guardar usuario",
+                "operationId": "baf6be532a3ca7e870711da06ba1a5e5",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "name del usuario",
+                        "required": true
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "email del usuario",
+                        "required": true
+                    },
+                    {
+                        "name": "clave",
+                        "in": "query",
+                        "description": "clave del usuario",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Guarda el usuario."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/v1/usuarios": {
+            "get": {
+                "summary": "Lista de usuarios",
+                "operationId": "9c00f40a3a91478919ae7dbcf566f0d0",
+                "responses": {
+                    "200": {
+                        "description": "Genera la lista de usuarios."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/video": {
+            "post": {
+                "summary": "Guardar video",
+                "operationId": "a485c54e8c0f5e40c6889b62b1532694",
+                "parameters": [
+                    {
+                        "name": "titulo",
+                        "in": "query",
+                        "description": "titulo del video",
+                        "required": true
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "description": "lista de tags del video",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Guarda el video."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/v1/videos": {
+            "get": {
+                "summary": "Lista de videos",
+                "operationId": "7fe62a66de25f94c99a72dd2fa7e0267",
+                "responses": {
+                    "200": {
+                        "description": "Genera la lista de videos."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    }
+}
